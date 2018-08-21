@@ -1,6 +1,16 @@
-# workouttube
+# Workoutube
 
-> A Vue.js project
+> Workout note with Youtube Player API.
+> 以Youtube作為輔助，快速建立自己的健身筆記。
+
+## Demo
+  
+  https://frontinorz.github.io/workoutube/#/
+
+## Buid with
+
+1. Vue-cli
+2. [Vue-youtube](https://github.com/anteriovieira/vue-youtube)
 
 ## Build Setup
 
