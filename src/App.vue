@@ -13,82 +13,60 @@ import SiteFooter from '@/components/SiteFooter';
 const data = [
   {
     muscle: '背肌',
-    exercises: '啞鈴划船',
+    exercises: '啞鈴三腳架划船',
     isVideo: true,
     video: {
-      id: 'N3z3DjxXpE4',
-      startSec: '184',
+      id: 'QZE80tfwy-c',
+      startSec: '441',
     },
-    note: '',
+    note: '取站立姿勢，一手支撐，一手握啞鈴，雙腳約與肩同寬，膝蓋微蹲。划船時保持身體中立，收肩夾背。',
   },
   {
     muscle: '胸肌',
-    exercises: '平躺臥推',
+    exercises: '地板啞鈴飛鳥',
     isVideo: true,
     video: {
-      id: 'Mub2i2BoHpM',
-      startSec: '50',
+      id: 'NZSC43eLKnA',
+      startSec: '274',
     },
-    note: '筆記一',
+    note: '用地板支撐可以使用更大的重量並加強離心作用，免除在握推椅上對肩膀施加壓力的風險',
   },
   {
     muscle: '肩膀',
-    exercises: '啞鈴側舉',
-    isVideo: false,
+    exercises: '站姿啞鈴肩推',
+    isVideo: true,
+    video: {
+      id: 'NqfoCdw0gpE',
+      startSec: '208',
+    },
+    note: '採用站姿，並用雙手同時進行以啟動更多的核心肌群。可以透過手臂以弧形的行程進行來加強肌肉收縮',
   },
 ];
 
 const scheduleList = [
   {
-    schedule: '背肌Day',
+    schedule: '大肌群訓練',
     isEdit: false,
     list: [
       {
-        exercises: '啞鈴硬舉',
+        exercises: '啞鈴三腳架划船',
+        weight: 10,
+        set: 3,
+        rep: 10,
+        time: 0,
+      },
+      {
+        exercises: '地板啞鈴飛鳥',
+        weight: 16,
+        set: 3,
+        rep: 8,
+        time: 0,
+      },
+      {
+        exercises: '站姿啞鈴肩推',
         weight: 20,
         set: 3,
-        rep: 4,
-        time: 0,
-      },
-      {
-        exercises: '啞鈴划船',
-        weight: 10,
-        set: 3,
-        rep: 12,
-        time: 0,
-      },
-      {
-        exercises: '啞鈴飛鳥',
-        weight: 10,
-        set: 3,
-        rep: 12,
-        time: 0,
-      },
-    ],
-  },
-  {
-    schedule: '胸肌Day',
-    isEdit: false,
-    list: [
-      {
-        exercises: '平躺啞鈴推舉',
-        weight: 20,
-        set: 3,
-        rep: 4,
-        time: 0,
-      },
-      {
-        exercises: '平躺啞鈴飛鳥',
-        weight: 10,
-        set: 3,
-        rep: 12,
-        time: 0,
-      },
-      {
-        exercises: '槓片夾心',
-        weight: 4,
-        set: 3,
-        rep: 15,
+        rep: 6,
         time: 0,
       },
     ],
@@ -113,7 +91,7 @@ export default {
 @import "@/assets/style/_variables.scss";
 
 #app {
-  font-family: 'Avenir','微軟正黑體', Helvetica, Arial, sans-serif;
+  font-family: 'Microsoft JhengHei', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

@@ -37,9 +37,6 @@
 .right{
     display: flex;
     align-items: center;
-    &__text{
-        // margin-left: 1rem;
-    }
     @include breakpoint(phone){
         margin-bottom: 1rem;
     }
