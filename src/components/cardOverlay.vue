@@ -3,10 +3,11 @@
     h1 {{overlay.title}}
     .more
         .more__header
-            button.btn.more__btn__close(@click="close")
-                i.fas.fa-times
-            button.btn.more__btn__delete(@click="deleteCard")
-                i.far.fa-trash-alt
+            .more__btngroup
+                button.btn.more__btn__delete(@click="deleteCard")
+                    i.far.fa-trash-alt
+                button.btn.more__btn__close(@click="close")
+                    i.fas.fa-times
             .more__title {{overlay.muscle}}
             .more__subtitle {{overlay.exercises}}
             .more__hr
@@ -20,7 +21,7 @@
                     |分
                     input.input-2num(type="number" pattern="[0-9]*" placeholder="00" v-model="temp.startSec" min="0" max="59")
                     |秒
-                button.more__video__input__btnok(@click.prevent="addVideo" :disabled="!checkVideoId" V-bind:class="{'more__video__input__btnok-disable' : !checkVideoId}") 加入影片
+                    button.more__video__input__btnok(@click.prevent="addVideo" :disabled="!checkVideoId" V-bind:class="{'more__video__input__btnok-disable' : !checkVideoId}") 加入影片
             .more__player__wrapper(v-show="overlay.isVideo")
                 youtube(ref="youtube",width="100%", height="100%")
             .more__content__note
@@ -133,23 +134,25 @@ export default {
     @include breakpoint(tablet) {
         width: 95%;
         height: 70%;
+        padding: $pd-phone;
     }
     &__header {
         width: 100%;
         text-align: center;
         display: grid;
-        grid-gap: 10px;
+        @include breakpoint(tablet) {
+            width: 95%;
+        }
+    }
+    &__btngroup{
+        display: flex;
+        align-items: center;
+        justify-content: space-between
     }
     &__btn__close {
-        position: absolute;
         font-size: 1.5rem;
-        right: 30px;
-        top: 20px;
     }
     &__btn__delete {
-        position: absolute;
-        left: 30px;
-        top: 20px;
         font-size: 1.2rem;
     }
     &__title {
@@ -180,16 +183,17 @@ export default {
     &__content {
         width: 100%;
         height: 100%;
-        padding: 20px;
         padding-top: 0;
         display: grid;
         grid-template-rows: 1fr minmax(90%, 1fr) minmax(320px, 1fr);
         grid-gap: 20px;
+        padding-right: 5px;
         align-items: start;
         align-content: start;
         overflow-y: scroll;
         @include breakpoint(tablet) {
             grid-template-rows: 1fr minmax(90%, 1fr) minmax(250px, 1fr);
+            grid-gap: $pd-phone;
         }
     }
     &__content__novideo {
@@ -206,7 +210,6 @@ export default {
     &__video__inputwrap {
         display: grid;
         grid-gap: 10px;
-        margin-bottom: 10px;
         grid-auto-flow: column;
         justify-items: center;
         justify-content: center;
@@ -216,25 +219,35 @@ export default {
             border: 1px solid #aaaaaa;
             border-radius: 5px;
             padding: 5px 10px;
+            @include breakpoint(tablet) {
+                padding: 2px 5px;
+            }
         }
         @include breakpoint(tablet) {
             grid-auto-flow: row;
             justify-items: start;
         }
     }
+    &__video__input{
+        text-align: left;
+        display: flex;
+        align-items: center;
+        font-size: 1.2rem;
+    }
     &__video__input-error {
         color: red;
     }
     &__video__input__btnok {
-        align-self: center;
         cursor: pointer;
         background: $color_editing;
         padding: 2px 10px;
         border-radius: 5px;
         color: white;
         letter-spacing: 2px;
+        margin-left: 10px;
         @include breakpoint(tablet) {
-            justify-self: center;
+            letter-spacing: 1px;
+            margin-left: 5px;
         }
     }
     &__video__input__btnok-disable {

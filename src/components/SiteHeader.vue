@@ -115,11 +115,11 @@ export default {
     //align-self: flex-end;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     display: none;
     position: relative;
     flex-direction: column;
-    width: 2rem;
+    width: 2.5rem;
     height: 2rem;
     transition: .5s;
     cursor: pointer;
@@ -129,27 +129,25 @@ export default {
     }
     &__active{
         .bergerlist__bar{
+
             &:first-child{
-                transform: translateY(0.47rem) rotate(45deg);
+                transform: translateY(0.8rem) rotate(45deg);
             }
             &:nth-child(2){
                 opacity: 0;
             }
             &:last-child{
-                transform: translateY(-0.47rem) rotate(-45deg);
+                transform: translateY(-0.8rem) rotate(-45deg);
             }
         }
     }
     &__bar{
         position: relative;
         width: 100%;
-        height: 0.2rem;
+        height: 4px;
         border-radius: 1.5px;
         background-color: #aaa;
         transition: .3s;
-        &:nth-child(2){
-            margin: 0.3rem 0px;
-        }
     }
 }
 
@@ -206,7 +204,7 @@ export default {
     font-size: 1.7rem;
     font-family: 'Kanit', sans-serif;
     @include breakpoint(phone){
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 }
 .title{
