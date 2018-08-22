@@ -149,6 +149,7 @@ export default {
     },
     closeOverlay() {
       this.isOverlay = false;
+      localStorage.setItem('exercisedata', JSON.stringify(this.exercisedata));
     }
   },
 };
@@ -213,6 +214,7 @@ export default {
   }
   &__content-holder{
     overflow: hidden;
+    min-height: 100px;
     background: $color_editing;
   }
   &__content-overlay{

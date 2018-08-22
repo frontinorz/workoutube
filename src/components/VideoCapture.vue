@@ -117,7 +117,7 @@ export default {
     position: relative;
     display: grid;
     grid-gap: 20px;
-    grid-template-rows:2rem 1fr;
+    grid-template-rows: 2rem 1fr;
     justify-items: center;
     align-content: start;
     border-radius: 20px;
@@ -135,6 +135,7 @@ export default {
     @include breakpoint(phone){
         font-size: 12px;
         padding: 0px $pd-phone;
+        grid-template-rows: 4rem 1fr;
     }
     &__btn__close {
         position: absolute;
@@ -144,25 +145,46 @@ export default {
     }
     &__btn__ok {
         background: $color_editing;
-        padding: 5px 10px;
+        padding: 2px 10px;
         border-radius: 5px;
+        margin-left: 10px;
         color: #eeeeee;
         letter-spacing: 2px;
         font-weight: 900;
         &:hover {
             background: lighten($color_editing, 10);
         }
+        @include breakpoint(phone){
+            margin-left: 0;
+        }
     }
     &__btn__disable {
         background: lighten($color_editing, 10);
         cursor: initial;
     }
-    &__video__input {
+    &__input__wrapper {
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        grid-auto-flow: column;
+        justify-content: center;
+        @include breakpoint(phone) {
+            grid-gap: 5px;
+            grid-auto-flow: row;
+        }
         input {
             margin-left: 10px;
             border: 1px solid #aaaaaa;
             padding: 5px 10px;
+            @include breakpoint(tablet) {
+                padding: 2px 5px;
+            }
         }
+    }
+    &__video__input {
+        display: flex;
+        align-items: center;
+        font-size: 1.1rem;
     }
     &__video__input-error {
         color: red;
@@ -181,12 +203,18 @@ export default {
             grid-template-columns: 1fr;
             grid-template-rows: 1.5fr 1fr;
         }
+        @include breakpoint(tablet) {
+            grid-gap: $pd-phone;
+        }
     }
     &__main__input {
         display: grid;
         grid-gap: 20px;
         grid-template-rows: 1.5rem 1.2rem 1fr 1.5rem;
         align-items: start;
+        @include breakpoint(tablet) {
+            grid-gap: $pd-phone;
+        }
         &__muscle {
             padding-left: 2rem;
             font-size: 1.5rem;
@@ -213,14 +241,7 @@ export default {
     &__videowrap{
         background: #000;
     }
-    &__input__wrapper {
-        display: grid;
-        grid-gap: 20px;
-        margin-bottom: 10px;
-        align-items: center;
-        justify-items: center;
-        grid-auto-flow: column;
-    }
+
 }
 
 .info{

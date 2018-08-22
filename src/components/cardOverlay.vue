@@ -140,9 +140,6 @@ export default {
         width: 100%;
         text-align: center;
         display: grid;
-        @include breakpoint(tablet) {
-            width: 95%;
-        }
     }
     &__btngroup{
         display: flex;
