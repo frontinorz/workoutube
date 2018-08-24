@@ -151,6 +151,9 @@ export default {
     }
     &__btn__delete {
         font-size: 1.2rem;
+        @include breakpoint(phone){
+            font-size: 1.4rem;
+        }
     }
     &__title {
         font-size: 1.5rem;
@@ -211,7 +214,6 @@ export default {
         justify-items: center;
         justify-content: center;
         input {
-            margin-left: 5px;
             display: inline;
             border: 1px solid #aaaaaa;
             border-radius: 5px;

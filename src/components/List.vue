@@ -284,6 +284,9 @@ export default {
   }
   &__btn-delete {
     font-size: 1.2rem;
+    @include breakpoint(phone){
+      font-size: 1.4rem;
+    }
   }
   &__btn-op1 {
     opacity: 1;
@@ -449,8 +452,11 @@ export default {
   }
 }
 
-.fade-enter-active, .fade-leave-active {
+.fade-enter-active{
   transition: opacity .3s;
+}
+.fade-leave-active {
+  transition: opacity 0s;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
