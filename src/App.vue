@@ -1,8 +1,8 @@
 <template lang="pug">
   #app
     SiteHeader
-    //transition(name="slide-fade")
-    router-view(:exercisedata="exercisedata", :scheduledata="scheduleList")
+    transition(name="slide-fade" mode="out-in")
+      router-view(:exercisedata="exercisedata", :scheduledata="scheduleList")
     SiteFooter
 </template>
 
@@ -109,14 +109,17 @@ export default {
 }
 
 .slide-fade-enter-active {
-  transition: all .3s ease;
+  transition: all .1s ease;
 }
 .slide-fade-leave-active {
-  transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  transition: all .1s cubic-bezier(1.0, 0.5, 0.8, 1.0);
 }
-.slide-fade-enter, .slide-fade-leave-to
-/* .slide-fade-leave-active for below version 2.1.8 */ {
-  transform: translateX(50px);
+.slide-fade-leave-to {
+  //transform: translateX(-10px);
+  opacity: 0;
+}
+.slide-fade-enter {
+  //transform: translateX(10px);
   opacity: 0;
 }
 

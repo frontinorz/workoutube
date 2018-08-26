@@ -270,12 +270,5 @@ export default {
     &__content__btn {
         font-size: 1.5rem;
     }
-    i {
-        margin-right: 10px;
-        margin-left: 10px;
-        &:first-child {
-            margin-left: 0;
-        }
-    }
 }
 </style>

@@ -57,7 +57,7 @@
               .schedule__list__item
                 i.fas.fa-stopwatch
                 input.schedule__list__input(type="number" pattern="[0-9]*" v-model="a.time" placeholder="時間" :readonly="!s.isEdit")
-    transition(name="fade")
+    transition(name="fade" mode="out-in")
       .card__wrapper(v-if="isScheduleAdd || isScheduleEdit")
         .search
           .search__bar
@@ -338,15 +338,12 @@ export default {
   }
   &__btn-delete {
     color: $color_editing;
-    i{
-      margin-right: 1rem;
-    }
   }
   &__exercise {
     justify-self: start;
     font-size: 1rem;
     min-width: 4rem;
-    margin-right: 1rem;
+    margin-right: 0.5rem;
   }
   &__info {
     display: grid;
@@ -366,7 +363,6 @@ export default {
     margin-left: 0.5rem;
     text-align: center;
     border: 1px solid #eeeeee;
-    padding: 5px 0px;
     border: none;
     color: black;
     font-size: 1rem;
@@ -458,7 +454,7 @@ export default {
 .fade-leave-active {
   transition: opacity 0s;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+.fade-enter, .fade-leave-to{
   opacity: 0;
 }
 </style>

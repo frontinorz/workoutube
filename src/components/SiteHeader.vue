@@ -34,7 +34,6 @@ export default {
         linkClick(route){
             this.isListOpen = false;
             this.linkNow = route;
-            console.log(this.linkNow );
         },
         handleScroll () {
             this.isScroll = window.scrollY > 0;
