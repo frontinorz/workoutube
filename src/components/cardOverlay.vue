@@ -21,7 +21,7 @@
                     |分
                     input.input-2num(type="number" pattern="[0-9]*" placeholder="00" v-model="temp.startSec" min="0" max="59")
                     |秒
-                    button.more__video__input__btnok(@click.prevent="addVideo" :disabled="!checkVideoId" V-bind:class="{'more__video__input__btnok-disable' : !checkVideoId}") 加入影片
+                    button.more__video__input__btnok(@click.prevent="addVideo" , :class="{'more__video__input__btnok-disable' : !checkVideoId}" :disabled="!checkVideoId") 加入影片
             .more__player__wrapper(v-show="overlay.isVideo")
                 youtube(ref="youtube",width="100%", height="100%")
             .more__content__note
@@ -66,6 +66,7 @@ export default {
         },
         deleteCard() {
             this.$emit('deleteCard');
+            this.player.stopVideo();
         },
         dataTimeTrans() {
             this.temp.startSec = parseInt(this.temp.startSec) || 0;

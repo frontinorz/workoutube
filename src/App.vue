@@ -91,7 +91,7 @@ export default {
 @import "@/assets/style/_variables.scss";
 
 #app {
-  font-family: 'Microsoft JhengHei', Helvetica, Arial, sans-serif;
+  font-family:  Helvetica,'Microsoft JhengHei', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -100,6 +100,7 @@ export default {
   height: 100%;
   font-size: 16px;
   padding-top: calc(10vh + 2rem);
+  min-width: 300px;
   @include breakpoint(tablet){
     font-size: 14px;
   }

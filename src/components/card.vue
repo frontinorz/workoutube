@@ -30,9 +30,9 @@
           i.fas.fa-angle-down
   transition(name="fade")
     CardOverlay(v-show="isOverlay", :overlay="datanow",  ref="overlay",
-                v-on:close="closeOverlay",
-                v-on:deleteCard="deleteWorkout",
-                v-on:addVideo="dataAddVideo")
+                @close="closeOverlay",
+                @deleteCard="deleteWorkout",
+                @addVideo="dataAddVideo")
 
 </template>
 

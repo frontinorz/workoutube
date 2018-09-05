@@ -108,9 +108,6 @@ export default {
     checkScheduleInput() {
       return (this.tempScheduleName !== '' && this.tempScheduleData.length !== 0);
     },
-    // isEditing(){
-    //   return this.isScheduleAdd || this.isScheduleEdit;
-    // }
   },
   methods: {
     scheduleEdit(d) {
@@ -150,7 +147,6 @@ export default {
       this.scheduledata.forEach(data => data.isEdit = false);
     },
     scheduleAdd() {
-      //if (!this.checkScheduleInput) return;
       this.scheduledata.push({
           schedule: this.tempScheduleName,
           isEdit: false,
@@ -408,6 +404,7 @@ export default {
 }
 .card__wrapper{
   height: 70vh;
+  min-height: 300px;
   overflow-y: scroll;
   overflow-x: hidden;
   padding: 1rem 1rem;

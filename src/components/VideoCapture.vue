@@ -117,13 +117,14 @@ export default {
     position: relative;
     display: grid;
     grid-gap: 20px;
-    grid-template-rows: 2rem 1fr;
+    grid-template-rows: auto 1fr;
     justify-items: center;
     align-content: start;
     border-radius: 20px;
     padding: 0px $pd-desktop-lg;
     width: 100%;
-    min-height: calc(100% - 10vh - 2rem);
+    height: calc(100% - 10vh - 2rem);
+    min-height: 500px;
     @include breakpoint(desktop) {
         padding: 0px $pd-desktop;
         height: 100vh;
