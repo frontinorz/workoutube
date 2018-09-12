@@ -78,24 +78,27 @@ export default {
             this.player.cueVideoById(this.dataVideoIdTrans(), 0);
         },
         videoCaptureAddExercise() {
-            let time = parseInt(this.player.getCurrentTime()) || 0;
-            let videoid = this.dataVideoIdTrans();
-            console.log(videoid);
-            let work = {
-                muscle: this.temp.muscle,
-                exercises: this.temp.exercises,
-                isVideo: true,
-                video: {
-                    id: videoid ,
-                    startSec: time
-                },
-                note: this.tempNote
-            };
-            this.cardAnimation();
-            this.exercisedata.push(work);
-            this.temp.exercises = '';
-            this.temp.note = '';
-            localStorage.setItem('exercisedata', JSON.stringify(this.exercisedata));
+            const videoid = this.dataVideoIdTrans();
+            const getTime = this.player.getCurrentTime();
+            const self = this;
+
+            getTime.then(function (result) {
+                const work = {
+                    muscle: self.temp.muscle,
+                    exercises: self.temp.exercises,
+                    isVideo: true,
+                    video: {
+                        id: videoid ,
+                        startSec: parseInt(result),
+                    },
+                    note: self.tempNote
+                };
+                self.cardAnimation();
+                self.exercisedata.push(work);
+                self.temp.exercises = '';
+                self.temp.note = '';
+                localStorage.setItem('exercisedata', JSON.stringify(self.exercisedata));
+            })
         },
         cardAnimation() {
             this.cardAnimate = true;
